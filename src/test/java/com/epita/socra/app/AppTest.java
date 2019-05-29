@@ -35,9 +35,7 @@ public class AppTest {
         App app = new App(mock);
         app.run();
 
-        verify(mock).write("> ");
         verify(mock).write(argThat(message -> message.contains(out)));
-        verify(mock).write("> ");
     }
 
     @Test
@@ -100,239 +98,87 @@ public class AppTest {
     public void test_06_un() {
         create_test("_ _ _ _ _ _ . . . .", "6");
     }
-/*
+
     @Test
     public void test_valid_1(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("1");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains(". _ _ _ _")));
+        create_test("1", "1");
     }
     @Test
     public void test_valid_2(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("2");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains(". . _ _ _")));
+        create_test("2", "2");
     }
     @Test
     public void test_valid_3(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("3");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains(". . . _ _")));
+        create_test("3", "3");
     }
     @Test
     public void test_valid_4(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("4");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains(". . . . _")));
+        create_test("4", "4");
     }
     @Test
     public void test_valid_5(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("5");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains(". . . . .")));
+        create_test("5", "5");
     }
     @Test
     public void test_valid_6(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("6");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains("_ . . . .")));
+        create_test("6", "6");
     }
     @Test
     public void test_valid_7(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("7");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains("_ _ . . .")));
+        create_test("7", "7");
     }
     @Test
     public void test_valid_8(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("8");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains("_ _ _ . .")));
+        create_test("8", "8");
     }
-*/
+
     @Test
     public void test_valid_9(){
-        create_test("9", "_ _ _ _ .");
+        create_test("9", "9");
     }
-/*
+
     @Test
     public void test_valid_10(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("10");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains(". _ _ _ _ _ _ _ _ _")));
+        create_test("10", "10");
     }
     @Test
     public void test_valid_83(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("83");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains("_ _ _ . . . . . _ _")));
+        create_test("83", "83");
     }
     @Test
     public void test_valid_1903(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("1903");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains(". _ _ _ _ _ _ _ _ . _ _ _ _ _ . . . _ _")));
+        create_test("1903", "1903");
     }
     @Test
     public void test_valid_42(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("42");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains(". . . . _ . . _ _ _")));
+        create_test("42", "42");
     }
     @Test
     public void test_valid_999(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("999");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains("_ _ _ _ . _ _ _ _ . _ _ _ _ .")));
+        create_test("999", "999");
     }
-    /*
-    @Test
-    public void test_invalid_nothing(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("");
-        App app = new App(mock);
-        app.run();
 
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains("")));
-    }
-    */
-/*
-    @Test
-    public void test_invalid_abc(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("abc");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains("Invalid input: Not a number")));
-    }
-    @Test
-    public void test_invalid_1a(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("1a");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains("Invalid input: Not a number")));
-    }
     @Test
     public void test_valid_420(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("420");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains(". . . . _ . . _ _ _ _ _ _ _ _")));
+        create_test("420", "420");
     }
     @Test
     public void test_valid_69(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("69");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains("_ . . . . _ _ _ _ .")));
+        create_test("69", "69");
     }
 
     @Test
     public void test_valid_0(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("0");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains("_ _ _ _ _")));
+        create_test("0", "0");
     }
 
     @Test
     public void test_valid_06(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("06");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains("_ . . . .")));
+        create_test("06", "6");
     }
 
     @Test
     public void test_valid_999999999(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("999999999");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains("_ _ _ _ . _ _ _ _ . _ _ _ _ . _ _ _ _ . _ _ _ _ . _ _ _ _ . _ _ _ _ . _ _ _ _ . _ _ _ _ .")));
+        create_test("999999999", "999999999");
     }
-
-    @Test
-    public void test_valid_008(){
-        IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("008");
-        App app = new App(mock);
-        app.run();
-
-        verify(mock).write("Enter a number.");
-        verify(mock).write(argThat(message -> message.contains("_ _ _ . .")));
-    }
-*/
 }

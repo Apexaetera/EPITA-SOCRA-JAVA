@@ -30,7 +30,6 @@ public final class App {
     public void run(){
         int acc = 0;
         while (true) {
-            adapter.write("> ");
             String number = adapter.read();
             if (number.matches("exit"))
                 break;
